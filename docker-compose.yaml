@@ -1,0 +1,19 @@
+version: "2"
+services:
+    sonarr:
+        image: docker pull linuxserver/sonarr
+        ports:
+            #- 9000:9000
+            - 8989:8989
+        environment:
+            - VIRTUAL_HOST=sonarr.docker.fuwaqpj.com
+            - PUID=<UID>
+            - PGID=<GID>
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /docker/sonarr/config:/config
+            - /mnt/NAS/Torrent/sonarr:/tv
+            - /mnt/NAS/Torrent/sonarr:/downloads
+        restart: always
+
+### https://portainer.readthedocs.io/en/stable/deployment.html#persist-portainer-data
