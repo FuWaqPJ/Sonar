@@ -1,7 +1,7 @@
 version: "2"
 services:
     sonarr:
-        image: docker pull linuxserver/sonarr
+        image: linuxserver/sonarr
         ports:
             #- 9000:9000
             - 8989:8989
